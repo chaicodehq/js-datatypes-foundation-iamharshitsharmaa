@@ -47,20 +47,48 @@
  */
 export function repeatPattern(pattern, times) {
   // Your code here
+  if(pattern === null || pattern === undefined || typeof pattern !== "string" ||
+     times === null || times === undefined || typeof times !== "number" || times < 0 || !Number.isInteger(times)) {
+    return "";
+  }
+  return pattern.repeat(times);
 }
 
 export function extractRangoliCenter(design, start, end) {
   // Your code here
+  if(design === null || design === undefined || typeof design !== "string" ||
+     start === null || start === undefined || typeof start !== "number" ||
+     end === null || end === undefined || typeof end !== "number") {
+    return "";
+  }
+  return design.slice(start, end);
 }
 
 export function splitAndJoinRangoli(colorString, oldSep, newSep) {
   // Your code here
+  if(colorString === null || colorString === undefined || typeof colorString !== "string" ||
+     oldSep === null || oldSep === undefined || typeof oldSep !== "string" ||
+     newSep === null || newSep === undefined || typeof newSep !== "string") {
+    return "";
+  }
+  return colorString.split(oldSep).join(newSep);
 }
 
 export function replaceRangoliColor(design, oldColor, newColor) {
   // Your code here
+  if(design === null || design === undefined || typeof design !== "string" ||
+     oldColor === null || oldColor === undefined || typeof oldColor !== "string" ||
+     newColor === null || newColor === undefined || typeof newColor !== "string") {
+    return "";
+  }
+  return design.replaceAll(oldColor, newColor);
 }
 
 export function makeRangoliBorder(char, length) {
   // Your code here
+  if(char === null || char === undefined || typeof char !== "string" ||
+     length === null || length === undefined || typeof length !== "number" || length < 0) {
+    return "";
+  }
+  return char.repeat(Math.ceil(length / char.length)).slice(0, length);
 }
